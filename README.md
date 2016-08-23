@@ -49,6 +49,9 @@ ruby daemon_downloader.rb stop
     <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads" <b>ChromeDriver</b></a>.
    Once upon you have downloaded the driver for your architecture, put it in 
    the directory where you cloned the project.
+   
+  * Run ./configure.sh in the shell, and enter the default Chrome downloads path
+    and where you want to save your songs.
  
 
 ## Notes
