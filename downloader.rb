@@ -80,6 +80,7 @@ class YTDownloader
     end
     song = download()
     if song == "undefined.mp3"
+      puts '==> Something went wrong...download aborted'
       return
     end
     wait_download_complete(song)
@@ -140,10 +141,7 @@ class YTDownloader
         break
       end
       sleep(1)
-      if i > 90 
-        puts '==> Something went wrong...download aborted'
-        return song_filename
-      end
+    
     end
     return song_filename
   end
