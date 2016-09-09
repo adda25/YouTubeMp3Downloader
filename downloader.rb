@@ -1,4 +1,5 @@
 require 'selenium/webdriver'
+require 'colorize'
 require 'find'
 require 'pry'
 
@@ -80,7 +81,7 @@ class YTDownloader
     end
     song = download()
     if song == "undefined.mp3"
-      puts '==> Something went wrong...download aborted'
+      puts '==> Something went wrong...download aborted'.red
       return
     end
     wait_download_complete(song)
@@ -151,10 +152,17 @@ class YTDownloader
   ##################
   private
   def wait_download_complete(song_filename)
+    bad_chars = ['[', ']', '"', '\'', '/'];
+    bad_chars.each do |i|
+        if song_filename.include?(i)
+          puts "==>" + " Song name contains bad chars! Can't check download state".colorize(:white ).colorize( :background => :yellow)
+          return
+        end
+      end
     loop do 
       if File.file?(@download_path + "/" + song_filename)
         puts "==> Finish to download, song path: " + @download_path + "/" + song_filename
-        puts "==> READY TO SING!"
+        puts "==>" + " READY TO SING!".colorize(:white ).colorize( :background => :green)
         break
       end
     end
