@@ -1,4 +1,30 @@
-# YouTube Mp3 Downloader
+## Youtube Mp3 Downloader 
+Chrome extension that allow the user to download songs
+from *YouTube* with a click. The system use the *youtube-dl* library
+for download *mp3* from YouTube.
+
+## Usage
+Launch in the console the Ruby script:
+
+```Ruby
+ruby downloader-youtube-dl.rb
+```
+
+Now when you are listening a good song on *YouTube* (using *Chrome* as web browser)
+click on the extension button:
+
+
+![Extension button](readme_button_to_click.png)
+
+
+and than in few seconds you will have your song in the specified directory.
+
+## Notes
+This project require *Ruby* and the <a href="https://rg3.github.io/youtube-dl/" <b>http://youtube-dl</b></a> library.
+The system has been tested on OSX El Capitan 10.11.6, macOS Sierra 10.12,
+Linux Mint 64bit.
+
+# YouTube Mp3 Downloader [Old Selenium Version]
 Chrome extension that allow the user to download songs
 from *YouTube* with a click. The system automatically submit requests
 to 
@@ -37,22 +63,14 @@ ruby daemon_downloader.rb stop
   * Install the *Chrome* extension as explained in this link: 
      <a href="https://developer.chrome.com/extensions/getstarted#unpacked" <b>https://developer.chrome.com/extensions/getstarted#unpacked</b></a>
 
-  * Than be sure to have installed on your system the following Ruby gems:
+  * Download and install the *youtube-dl* library.
 
+  * Launch in the terminal ruby deamon:
 
     ```Bash
-    gem install selenium-webdriver
-    gem install daemons
+    ruby daemon_downloader.rb
     ```
 
-  * You also need the *Chrome* driver: you can find it at this link:
-    <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads" <b>ChromeDriver</b></a>.
-   Once upon you have downloaded the driver for your architecture, put it in 
-   the directory where you cloned the project.
-   
-  * Run ./configure.sh in the shell, and enter the default Chrome downloads path
-    and where you want to save your songs.
- 
 
 ## Notes
 This project require *Chrome* and *Ruby*.
@@ -62,7 +80,7 @@ You can use the Ruby side without daemonize it:
 
 
 ```Ruby
-ruby downloader.rb
+ruby downloader-youtube-dl.rb
 ```
 
 

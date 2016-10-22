@@ -1,3 +1,3 @@
 require 'daemons'
 
-Daemons.run('downloader.rb')
+Daemons.run('downloader-youtube-dl.rb')

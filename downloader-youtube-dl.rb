@@ -1,4 +1,5 @@
 require 'find'
+
 class YTDownloader 
   attr_accessor :sleep_time_daemon_routine #seconds
   attr_accessor :music_url_download_path
@@ -52,15 +53,12 @@ class YTDownloader
   end
 
   def download(song_link)
-    system 'youtube-dl --extract-audio --audio-format mp3 ' + song_link
-   
+    system 'youtube-dl --extract-audio --audio-format mp3 ' + song_link   
   end
-
-
 
 end #End YTDownloader
 
-# "/Users/adda/Downloads", "/Users/adda/Music/YTDMusic"
+
 downloader = YTDownloader.new()
 downloader.daemon_routine
 
